@@ -10,6 +10,7 @@ def print_runtime(func):
         end = time.time()
         running_time = end - start
         print("runtime = %.2f seconds" % running_time)
+        print(f"func: {func}\nargs: {args}\nkwargs: {kwargs}")
         return value
     return wrapper_print_runtime
 

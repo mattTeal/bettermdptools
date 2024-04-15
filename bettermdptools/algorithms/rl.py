@@ -153,7 +153,7 @@ class RL:
         #       return np.argmax(Q[state])
         #   else:
         #       return np.random.randint(len(Q[state]))
-        select_action = lambda state, Q, epsilon: np.argmax(Q[state]) \
+        select_action = lambda state, Q, epsilon: np.random.choice(np.arange(len(Q[state]))[Q[state]==np.max(Q[state])]) \
             if np.random.random() > epsilon \
             else np.random.randint(len(Q[state]))
         alphas = RL.decay_schedule(init_alpha,
@@ -275,7 +275,7 @@ class RL:
         #       return np.argmax(Q[state])
         #   else:
         #       return np.random.randint(len(Q[state]))
-        select_action = lambda state, Q, epsilon: np.argmax(Q[state]) \
+        select_action = lambda state, Q, epsilon: np.random.choice(np.arange(len(Q[state]))[Q[state]==np.max(Q[state])]) \
             if np.random.random() > epsilon \
             else np.random.randint(len(Q[state]))
         alphas = RL.decay_schedule(init_alpha,
